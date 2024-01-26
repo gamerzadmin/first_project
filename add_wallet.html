@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Load Wallet | GamerZ</title>
+    <link rel="stylesheet" href="add_wallet.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <div id="navbar" class="nav-bar">
+        <!-- Left Navigation Bar -->
+    <div class="left-nav">
+        <div onclick="menu_click()" id="menu1" class="menu"><img src="/Photo/menu.png" ></div>
+        <div onclick="menu_click()" class="menu" id="menu2"><img src="/Photo/arrow.png"></div>
+        <div class="logo"> <div class="f">Gamer</div><div class="s">Z</div> </div>
+    </div>
+
+    <!-- Middle Navigation Bar -->
+    <div class="middle-nav">
+        <a  href="index.html">Home</a>
+        <a  href="pubg.html">Pubg</a>
+        <a  href="free_fire.html">Free Fire</a>
+        <a  href="game_app.html">Games </a>
+        <a  href="about_us.html">About us</a>   
+    </div>
+
+    <!-- Right Navigation Bar -->
+    <div class="right-nav">
+
+        <!-- For Login Options -->
+        <div class="login">
+            <a href="login.html">Login</a>
+        </div>
+
+        <!-- For Account Options -->
+        <div class="account">
+            <a href="#"><img src="/Photo/add.png"></a><p>Rs:10/-</p>
+        </div>
+    </div>
+</div>
+
+<!-- Responsive navigation for small width devices  -->
+<div id="content" class="res-middle-nav">
+    <div class="links">  <!--This is used for align link in center-->
+        <div class="nav-l">
+            <li class="active"><a  href="/index.html">Home</a></li> <!-- .active is used for active nav link-->
+            <li><a  href="/pubg.html">Pubg</a></li>
+            <li><a  href="/free_fire.html">Free Fire</a></li>
+            <li><a  href="/game_app.html">Games</a></li>
+            <li><a  href="/about_us.html">About Us</a></li>
+        </div>    
+    </div>
+</div>
+
+<!-- Two section for add wallet and transaction -->
+<div class="section">
+
+    <!-- Left Section For Add Money in Wallet -->
+    <div class="left-section">
+        <div class="add-wallet-title">
+            <p>Add money in GamerZ Wallet using Different Options </p>
+        </div>
+
+        <!-- External Option with api Khalti / Esewa -->
+        <div class="external-option">
+            <a href="#"><img src="https://yt3.ggpht.com/a-/AAuE7mDms981NsWrDvspJgY6didP30F0yvf6nZ_teg=s900-mo-c-c0xffffffff-rj-k-no"><div class="desc"><p>Khalti</p></div></a>
+            <a href="#"><img src="https://dev-cdn.esewa.com.np/ui/images/logos/esewa-icon-large.png" > <div class="desc">E-Sewa</div></a>
+        </div>
+        <!-- Or -->
+        <div class="or">Or</div>
+        <!-- Direct Option With Bank Or Esewa -->
+        <div class="internal-option">
+            <div class="qr"><img src="https://media.nbcbayarea.com/2020/10/qr-code-huge.png?resize=906,1024" >
+                <div class="qr-desc">
+                    Pay Via Qr and Fill The Form<br>GamerZ
+                </div>
+            </div>
+            <div class="form">
+                <form>
+                    <label >Full Name *(Same as Sending A/C) </label><br>
+                    <input type="text" placeholder="Full Name"><br><br>
+                    <label>Transiction Code *(Optional)</label><br>
+                    <input type="text" placeholder="e.g:12321321"><br><br>
+                    <label >Amount *(Same as Sended)</label><br>
+                    <input type="text" placeholder="Rs:x"><br><br>
+                    <label>Screenshot</label><br>
+                    <input type="file" accept="image/*"><br><br>
+                    <label>Optional Message *(Optional)</label><br>
+                    <input type="text"><br><br>
+                    <div class="sub">
+                    <input type="submit" value="Done"></div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Right Section For View Transaction History -->
+    <div class="right-section">
+        <div class="transaction">
+            <div class="transaction-title">
+                Transaction History
+            </div>
+            <div class="transac">
+                <div class="tran">
+                    Rs:256/- Added in 2080/09/10
+                </div>
+                <div class="tran">
+                    Rs:256/- Added in 2080/09/10
+                </div>
+                <div class="no-tran">
+                    No Transaction Found
+                </div>
+            </div>
+        </div>
+        <div class="login-first">
+            <div class="login-title">
+                You Must Login To view content<br><br>
+                <a href="/login.html">Login</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Footer -->
+<!-- Footer Section -->
+<div class="footer-1">
+    <div class="footer">
+    <div class="f-1">
+        <div class="title-f"><div class="f">Gamer</div><div class="s">Z</div></div>
+        <div class="desc-f">GamerZ is a online store where gamers can purchased
+            Free Fire Diamond and Pubg Uc. Here you can purchase Mobile/Pc games.
+            If you have any doubt you can send message to us.
+        </div>
+    </div>
+    <div class="f-2">
+        <div class="title-f"><div class="f">Quick</div><div class="s">Links</div></div>
+        <div class="links-f">
+            <li><a href="#">Free Fire Top Up</a></li>
+            <li><a href="#">Pubg Top Up</a></li>
+            <li><a href="#">Free Fire Id</a></li>
+            <li><a href="#">Pubg Top Up</a></li>
+            <li><a href="#">Game/App</a></li>
+            <li><a href="#">About Us</a></li>
+        </div>
+    </div>
+    <div class="f-3">
+        <div class="title-n">NEWSLETTER</div>
+        <div class="desc-f">Subscribe our newsletter to get latest update.</div>
+        <div class="subscribe">
+            <input type="text" placeholder="Your email address">
+            <img src="/Photo/send.png">
+        </div>
+        
+    </div> 
+    </div>
+    <div class="copyright">Copyright © 2024 GamerZ LLC. All Rights Reserved.</div>
+</div>
+
+<script>
+    //Declaration
+    let menu_content = document.getElementById("content");
+    menu_content.style.display="none"
+    let menu1 = document.getElementById("menu1");
+    let menu2 = document.getElementById("menu2");
+    menu2.style.display="none";
+        
+    //If clicked
+        function menu_click(){
+        let menu_content = document.getElementById("content");
+            if(menu_content.style.display==="none"){
+                menu_content.style.display="block"
+                menu1.style.display="none";
+                menu2.style.display="block";
+            }
+            else{
+                menu_content.style.display="none"
+                menu1.style.display="block";
+                menu2.style.display="none";
+            }
+        }
+
+
+
+
+// Help desk 
+var helpb = document.getElementById("help-option");
+var helpd = document.getElementById("help-desk");
+helpd.style.display="none";
+function opend(){
+  var helpd = document.getElementById("help-desk");
+  if(helpd.style.display="none"){
+    helpd.style.display="block";
+    helpb.style.display= "none";
+  }
+}
+
+function closed(){
+  helpd.style.display="none";
+  helpb.style.display= "block";
+}
+
+
+
+</script>
+</body>
+</html>
