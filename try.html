@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <style>
+    .help-desk{
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      margin-right: 30px;
+      margin-bottom: 30px;
+    }
+    .help-desk img{
+      border: 1px solid #36384a;
+      background-color: #42a5f5;
+      border-radius: 30px;
+      cursor: pointer;
+
+    }
+    .help-desk img:hover{
+      box-shadow: 0px 0px 10px #42a5f5;
+      transition: 0.3s;
+    }
+    .start-chat{
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      margin-right: 30px;
+      margin-bottom: 30px;
+    }
+    .lets-chat{
+      border: 1px solid #42a5f5;
+      padding: 10px;
+      border-radius: 10px;
+      background-color: yellowgreen;
+    }
+    .lets-chat .hlp{
+      display: flex;
+      justify-content: center;
+    }
+    .lets-chat .hlp img{
+      width: 30px;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+    .lets-chat .hlp img:hover{
+      box-shadow: 0px 0px 5px red;
+      transition: 0.1s;
+      background-color: rgba(254, 1, 1, 0.614);
+    }
+    .lets-chat .admin p{
+      background-color: #36384a;
+      width: 150px;
+      color: white;
+      padding: 3px 5px;
+      border-radius: 10px;
+    }
+    .lets-chat .user{
+      float: right;
+    }
+    .lets-chat .user p{
+      background-color: #36384a;
+      width: auto;
+      color: white;
+      padding: 3px 5px;
+      border-radius: 10px;
+      
+    }
+    .chats{
+      
+      height: 150px;
+      border-radius: 5px;
+      background-color: white;
+      padding: 3px;
+    }
+    .send-chat{
+      display: flex;
+      align-items: center;
+    }
+    .send-chat input[type=text]{
+      width: 200px;
+      height: 25px;
+      border-radius: 3px;
+      outline: none;
+      border: 1px solid transparent;
+      border-bottom: 1px solid #36384a;
+      background-color: rgb(255, 255, 255);
+      
+    }
+    .send-chat img{
+      width: 35px;
+      margin: 5px;
+      cursor: pointer; 
+    }
+    .send-chat img:hover{
+      box-shadow: 0px 0px 10px #42a5f5;
+      transition: 0.2s;
+    }
+  </style>
+  <div id="help-option" class="help-desk">
+    <img onclick="opend()" src="/Photo/customer-service.png" >
+  </div>
+  <div id="help-desk" class="start-chat">
+    <div class="lets-chat">
+      <div class="hlp"><img onclick="closed()" src="/Photo/arrow.png"></div>
+        <div class="chats"><div class="admin">
+          <p>Hello. How can i help you?
+          </p>
+        </div>
+        <div class="user">
+        <p>Hi</p>
+        </div></div>
+      <div class="send-chat">
+        <input type="text" placeholder="Let's Start chats."><img src="/Photo/send.png">
+      </div>
+    </div>
+  </div>
+  <script>
+    var helpb = document.getElementById("help-option");
+    var helpd = document.getElementById("help-desk");
+    helpd.style.display="none";
+    function opend(){
+      var helpd = document.getElementById("help-desk");
+      if(helpd.style.display="none"){
+        helpd.style.display="block";
+        helpb.style.display= "none";
+      }
+    }
+
+    function closed(){
+      helpd.style.display="none";
+      helpb.style.display= "block";
+    }
+
+  </script>
+</body>
+</html>

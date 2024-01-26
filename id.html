@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Id | Digital Store</title>
+    <link rel="stylesheet" href="id.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <div id="navbar" class="nav-bar">
+        <!-- Left Navigation Bar -->
+    <div class="left-nav">
+        <div onclick="menu_click()" id="menu1" class="menu"><img src="/Photo/menu.png" ></div>
+        <div onclick="menu_click()" class="menu" id="menu2"><img src="/Photo/arrow.png"></div>
+        <div class="logo"> <div class="f">Gamer</div><div class="s">Z</div> </div>
+    </div>
+
+    <!-- Middle Navigation Bar -->
+    <div class="middle-nav">
+        <a class="active" href="index.html">Home</a>
+        <a  href="pubg.html">Pubg</a>
+        <a  href="free_fire.html">Free Fire</a>
+        <a  href="game_app.html">Games </a>
+        <a  href="about_us.html">About us</a>   
+    </div>
+
+    <!-- Right Navigation Bar -->
+    <div class="right-nav">
+
+        <!-- For Login Options -->
+        <div class="login">
+            <a href="login.html">Login</a>
+        </div>
+
+        <!-- For Account Options -->
+        <div class="account">
+            <a href="#"><img src="/Photo/add.png"></a><p>Rs:10/-</p>
+        </div>
+    </div>
+</div>
+
+<!-- Responsive navigation for small width devices  -->
+<div id="content" class="res-middle-nav">
+    <div class="links">  <!--This is used for align link in center-->
+        <div class="nav-l">
+            <li class="active"><a  href="/index.html">Home</a></li> <!-- .active is used for active nav link-->
+            <li><a  href="/pubg.html">Pubg</a></li>
+            <li><a  href="/free_fire.html">Free Fire</a></li>
+            <li><a  href="/game_app.html">Games</a></li>
+            <li><a  href="/about_us.html">About Us</a></li>
+        </div>    
+    </div>
+</div>
+
+
+
+<!-- Online customer support -->
+<div id="help-option" class="help-desk">
+    <img onclick="opend()" src="/Photo/customer-service.png" > <!--To open chat -->
+</div>
+<!--Chat Service -->
+<div id="help-desk" class="start-chat">
+    <div class="lets-chat">
+      <div class="hlp"><img onclick="closed()" src="/Photo/arrow.png"></div><!--Close Icon To close chat-->
+
+        <!-- Admin Chats -->
+        <div class="chats">
+            <div class="admin">
+                <p>Hello. How can i help you?</p>
+            </div>
+
+            <!-- Users Chats -->
+            <div class="user">
+                <p>Hi</p>
+            </div>
+        </div>
+
+        <!-- Typing chat and send button -->
+      <div class="send-chat">
+        <input type="text" placeholder="Let's Start chats."><!--Type Chat -->
+        <img src="/Photo/send.png"><!--Send Chat-->
+      </div>
+    </div>
+</div>
+
+<!--  Id Overview Section -->
+<div class="overview-id">
+    <div class="id">
+
+        <!-- Left side of id Where photo title  -->
+        <div class="left-id">
+            <!-- Imgage -->
+            <div class="image-overview">
+                <div class="highlight-img">
+                    <img id="img-show" src="#">
+                </div>
+                <div class="other-img">
+                    <div value="1" id="1" class="img"><img src="/Photo/1.png" ></div>
+                    <div value="2" id="2" class="img"><img src="/Photo/2.png" ></div>
+                    <div value="3" id="3" class="img"><img src="/Photo/3.png" ></div>
+                    <div value="4" id="4" class="img"><img src="/Photo/4.png" ></div>
+                </div>
+            </div>
+
+            <!-- Title -->
+            <div class="id-title">
+                <h2>Level :90; 20k Likes, All Evo Guns, All elite passs</h2>
+            </div>
+            <div class="buy-now">
+                <a href="#">Buy Now</a>
+            </div>
+        </div>
+        <div class="right-id">
+            <div class="which-product">Free Fire</div>
+            <div class="info">
+                <div class="t">
+                <p>Hello this is demo text hello hello demo text</p>
+                <p>Hello this is demo text hello hello demo text</p>
+                <p>Hello this is demo text hello hello demo text</p>
+                <p>Hello this is demo text hello hello demo text</p>
+                <p>Hello this is demo text hello hello demo text</p>
+                <p>Hello this is demo text hello hello demo text</p>
+                <p>Hello this is demo text hello hello demo text</p>
+                <p>Hello this is demo text hello hello demo text</p>
+            </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Footer Section -->
+<div class="footer">
+    <div class="all-in-one">
+        <div class="social-media">
+            <a href="#"><img src="/Photo/youtube (1).png" ></a><!--Youtube Link-->
+            <a href="#"><img src="/Photo/facebook (1).png" ></a><!--Facebook Link-->
+            <a href="#"><img src="/Photo/instagram (1).png" ></a><!--Instagram Link-->
+
+        </div>
+        <div class="copyright">
+            <h3>Copyright © 2024 Digital Store. All rights reserved.</h3><!--Copyright Content-->
+        </div>
+    </div>
+</div>
+
+<script>
+    //Declaration
+    let menu_content = document.getElementById("content");
+    menu_content.style.display="none"
+    let menu1 = document.getElementById("menu1");
+    let menu2 = document.getElementById("menu2");
+    menu2.style.display="none";
+        
+    //If clicked
+        function menu_click(){
+        let menu_content = document.getElementById("content");
+            if(menu_content.style.display==="none"){
+                menu_content.style.display="block"
+                menu1.style.display="none";
+                menu2.style.display="block";
+            }
+            else{
+                menu_content.style.display="none"
+                menu1.style.display="block";
+                menu2.style.display="none";
+            }
+        }
+
+
+// To hide and view Scrolled Content
+window.onscroll = function() {myFunction()};
+
+// Get the navbar
+var nav_bar = document.getElementById("navbar");
+
+// Get the offset position of the navbar
+var sticky = navbar.offsetTop;
+
+// Define a variable to store the previous scroll position
+var prevScrollPos = window.pageYOffset;
+
+// Define a function to hide or show the navbar
+function myFunction() {
+// Get the current scroll position
+var currentScrollPos = window.pageYOffset;
+// If the scroll position is greater than the navbar position
+if (currentScrollPos > sticky) {
+// If the user is scrolling down
+if (currentScrollPos > prevScrollPos) {
+  // Hide the navbar
+  nav_bar.style.top = "-50px";
+} else {
+  // Show the navbar
+  navbar.style.top = "0";
+}
+}
+// Update the previous scroll position
+prevScrollPos = currentScrollPos;
+}
+
+// Help desk 
+var helpb = document.getElementById("help-option");
+var helpd = document.getElementById("help-desk");
+helpd.style.display="none";
+function opend(){
+  var helpd = document.getElementById("help-desk");
+  if(helpd.style.display="none"){
+    helpd.style.display="block";
+    helpb.style.display= "none";
+  }
+}
+
+function closed(){
+  helpd.style.display="none";
+  helpb.style.display= "block";
+}
+var i =0;
+imgshow()
+function imgshow(){
+    
+    var img = document.getElementById("img-show");
+    var imgsrc = ["/Photo/1.png","/Photo/2.png","/Photo/3.png","/Photo/4.png"];
+    
+   
+        
+            img.src=imgsrc[i];
+            setTimeout(imgshow, 10000)
+            if(i==3){
+                i=0;
+            }
+            else{
+                i++
+            }
+    
+}
+var one = document.getElementById("1");
+    var two= document.getElementById("2");
+    var three = document.getElementById("3");
+    var  four = document.getElementById("4");
+    
+    one.addEventListener("click",function seet(){
+        var imgsrc = ["/Photo/1.png","/Photo/2.png","/Photo/3.png","/Photo/4.png"];
+        var img = document.getElementById("img-show");
+        img.src= imgsrc[0];
+    })
+    two.addEventListener("click",function seet(){
+        var imgsrc = ["/Photo/1.png","/Photo/2.png","/Photo/3.png","/Photo/4.png"];
+        var img = document.getElementById("img-show");
+        img.src= imgsrc[1];
+    })
+    three.addEventListener("click",function seet(){
+        var imgsrc = ["/Photo/1.png","/Photo/2.png","/Photo/3.png","/Photo/4.png"];
+        var img = document.getElementById("img-show");
+        img.src= imgsrc[2];
+    })
+    four.addEventListener("click",function seet(){
+        var imgsrc = ["/Photo/1.png","/Photo/2.png","/Photo/3.png","/Photo/4.png"];
+        var img = document.getElementById("img-show");
+        img.src= imgsrc[3];
+    })
+</script>
+</body>
+</html>

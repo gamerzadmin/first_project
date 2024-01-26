@@ -1,0 +1,890 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pubg | Digital Store</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        scroll-behavior: smooth;
+    }
+
+    body {
+        background-color: #0C0B21;
+    }
+
+    /* Navigation Bar */
+    .nav-bar {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px 5px;
+        background-color: #0e0d27;
+        align-items: center;
+        border-bottom: 2px solid #36384a;
+
+    }
+
+    #navbar {
+        position: fixed;
+        width: 100%;
+        height: 35px;
+        top: 0;
+        transition: top 0.3s;
+
+    }
+
+    /* Left Navigation Bar */
+    .left-nav {
+        width: 20%;
+        justify-content: center;
+        display: flex;
+        gap: 20px;
+        align-items: center;
+    }
+
+    /* Left Nav Logo */
+    .left-nav .logo {
+        font-size: 25px;
+        font-weight: 800;
+        cursor: pointer;
+        display: flex;
+    }
+
+    .f {
+        color: white;
+    }
+
+    .s {
+        color: #0d8b97;
+    }
+
+    .left-nav .logo img {
+        width: 60px;
+        display: flex;
+    }
+
+    /* Digi color */
+    .left-nav .fir {
+        color: #ffd780;
+        text-shadow: -1px -1px 10px #42a5f5;
+    }
+
+    /* Store color */
+    .left-nav .sec {
+        color: #42a5f5;
+    }
+
+    /* Hide nav  */
+    .left-nav .menu {
+        display: none;
+        cursor: pointer;
+    }
+
+    .left-nav .menu img {
+        padding: 5px;
+        border-radius: 3px;
+        border: 1px solid #0d8b97;
+    }
+
+    .left-nav .menu img:hover {
+        background-color: #0d8b97;
+        transition: 0.2s
+    }
+
+
+    /* Middle Navigation Bar */
+    .middle-nav {
+        width: 60%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        font-size: 20px;
+    }
+
+    .middle-nav a {
+        color: white;
+        font-weight: 23px;
+        text-decoration: none;
+
+    }
+
+    .middle-nav a:hover {
+        color: #9F3F79;
+        transition: 0.1s;
+    }
+
+    .middle-nav .active {
+
+        transition: 0.4s;
+        color: white;
+        border-bottom: 1px solid white;
+        text-shadow: -1px -1px 10px black;
+
+    }
+
+    /* Right Navigation Bar */
+    .right-nav {
+        display: flex;
+        width: 20%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+    }
+
+    .right-nav .account {
+        gap: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .right-nav .account a {
+        display: flex;
+
+        border-radius: 50%;
+
+    }
+
+    .right-nav .account a:hover {
+        box-shadow: 0px 0px 5px #d20937;
+    }
+
+    .right-nav .account {
+        display: flex;
+    }
+
+    .right-nav .login {
+        display: none;
+    }
+
+    .right-nav .login a {
+        color: rgb(255, 255, 255);
+        padding: 0px 12px;
+        border: 2px solid #42a5f5;
+        height: 36px;
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        border-radius: 5px;
+        font-size: 20px;
+        text-shadow: -1px 1px 10px black;
+
+    }
+
+    .login a:hover,
+    .account a:hover .account {
+        box-shadow: 3px 3px #42a5f5;
+        transition: 0.3s;
+
+    }
+
+
+    .right-nav .account {
+        cursor: pointer;
+        width: fit-content;
+        border: 2px solid #ffff;
+        text-decoration: none;
+        height: 36px;
+        width: 10p0p;
+        display: flex;
+        align-items: center;
+        padding: 0px 10px;
+        color: white;
+        border-radius: 3px;
+        font-size: 20px;
+
+        color: white;
+    }
+
+    .account img {
+        width: 25px;
+    }
+
+    .right-nav .account:hover {
+        transition: 0.3s;
+
+        background-color: #10acbb;
+    }
+
+    /* Responsive nav for small devices */
+    .res-middle-nav {
+
+        border-top: 4px solid #1d1f29;
+        width: 100%;
+        height: 100vh;
+        position: fixed;
+        margin-top: 40px;
+        background-color: #0e0d27;
+
+    }
+
+    .links {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+    }
+
+    .nav-l {
+        padding: 20px 0px;
+        top: 0;
+        width: 40%;
+        height: 50%;
+        list-style-type: none;
+    }
+
+    .res-middle-nav li {
+        margin: 10px 0px;
+    }
+
+    .res-middle-nav a {
+        text-decoration: none;
+        color: #ffff;
+        font-size: 30px;
+        padding: 2px 0px;
+
+
+    }
+
+    .res-middle-nav a:hover {
+        color: #c3073f;
+        transition: 0.3s;
+    }
+
+    .nav-l .active a {
+        border-bottom: 1px solid #ffff;
+    }
+
+    #menu2 {
+
+        cursor: pointer;
+    }
+
+    /*Pubg Ids */
+    .pubg-id-list {
+        width: 100%;
+        height: max-content;
+        margin-top: 10px;
+        padding-top: 60px;
+    }
+
+    .pubg-id-list .title {
+        margin-left: 50px;
+        font-size: 25px;
+        color: white;
+
+    }
+
+    .pubg-id-list .pubg-list {
+        margin: 10px auto;
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .user-id-pubg {
+        height: 290px;
+        background-color: #13132B;
+        margin: 10px auto;
+        width: 400px;
+        border-radius: 3px;
+    }
+
+    .user-id-pubg:hover {
+        box-shadow: 0px 0px 10px #4e4e50;
+        transition: 0.2s;
+    }
+
+    .user-id-pubg img {
+        height: 200px;
+        width: 400px;
+    }
+
+    .desc {
+        color: #ffff;
+        width: 380px;
+        margin: 10px auto;
+        height: 50px;
+    }
+
+    /* Footer Content */
+    .footer-1 {
+        width: 100%;
+        height: auto;
+    }
+
+    .footer {
+        border-top: 3px solid #0b0a1b;
+        width: 100%;
+        height: auto;
+        display: flex;
+
+    }
+
+    .f-1 {
+        width: 40%;
+        margin-top: 10px;
+    }
+
+    .title-f {
+        display: flex;
+        font-size: 25px;
+        margin-left: 20%;
+
+    }
+
+    .f-1 .desc-f {
+        width: 90%;
+        font-weight: 500;
+        font-size: 18px;
+        margin: 10px auto;
+        color: #404F66;
+        text-align: justify;
+        text-indent: 50px;
+    }
+
+    .f-2 {
+        width: 30%;
+        margin-top: 10px;
+        list-style-type: none;
+    }
+
+    .links-f li {
+        text-decoration: none;
+        margin-left: 10%;
+        margin: 5px 0px;
+    }
+
+    .links-f a {
+        text-decoration: none;
+        color: #404F66;
+    }
+
+    .links-f a:hover {
+        transition: 0.2s;
+        color: #9F3F79;
+    }
+
+    .f-3 {
+        width: 30%;
+        margin-top: 10px;
+
+    }
+
+    .title-n {
+        color: white;
+        margin-left: 10%;
+    }
+
+    .f-3 .desc-f {
+        width: 80%;
+        margin: 10px auto;
+        font-size: 18px;
+        color: #404F66;
+    }
+
+    .f-3 .subscribe {
+        width: 80%;
+        margin: 10px auto;
+        display: flex;
+        align-items: center;
+    }
+
+    .subscribe input[type=text] {
+        height: 30px;
+        width: 60%;
+        padding: 10px;
+        background-color: #110F29;
+        border: none;
+        font-size: 15px;
+    }
+
+    .subscribe img {
+        border: 2px solid #048F9D;
+        width: 35px;
+        height: 35px;
+        padding: 6px;
+        background-color: #048F9D;
+        cursor: pointer;
+    }
+
+    .subscribe img:hover {
+        background-color: transparent;
+        transition: 0.3s;
+    }
+
+    .copyright {
+        margin: 10px;
+        background-color: #404F66;
+        color: white;
+        font-size: 18px;
+        text-align: center;
+        padding: 20px 0px;
+    }
+
+    .top-up-pubg {
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        height: 50px;
+        align-items: center;
+    }
+
+    .top-up-pubg a {
+        text-decoration: none;
+        color: white;
+        font-size: 25px;
+        border: 2px solid #10acbb;
+        border-radius: 3px;
+        padding: 5px 10px;
+    }
+
+    .top-up-pubg a:hover {
+        background-color: #10acbb;
+        transition: 0.3s;
+    }
+
+    @media only screen and (max-width: 1080px) {
+
+        /* Nav  */
+        .left-nav {
+            width: 40%;
+        }
+
+        .left-nav .menu {
+            display: block;
+        }
+
+        /* Middle Navigation Bar */
+        .middle-nav {
+            display: none;
+        }
+
+
+        /* Right Navigation Bar */
+        .right-nav {
+            width: 30%;
+        }
+
+    }
+
+    @media only screen and (max-width: 700px) {
+
+        /* Nav  */
+        .left-nav {
+            width: 50%;
+        }
+
+
+        .right-nav {
+            width: 50%;
+        }
+
+        /* Footer */
+        .footer {
+
+            width: 100%;
+            height: auto;
+            display: block;
+
+        }
+
+        .f-1,.f-2,.f-3 {
+            width: 80%;
+            margin: 20px auto;
+        }
+    }
+
+    @media only screen and (max-width: 520px) {
+
+        /* Nav*/
+        .left-nav {
+            width: 50%;
+        }
+
+        .right-nav {
+            width: 50%;
+        }
+
+
+        .user-id-pubg {
+            height: 290px;
+            background-color: #13132B;
+            margin: 10px auto;
+            width: 330px;
+            border-radius: 3px;
+        }
+
+        .user-id-pubg img {
+            height: 200px;
+            width: 330px;
+        }
+
+        .desc {
+            color: #ffff;
+            width: 320px;
+            margin: 10px auto;
+            height: 50px;
+            font-size: 15px;
+        }
+    }
+</style>
+
+<body>
+    <!-- Navigation Bar -->
+    <div id="navbar" class="nav-bar">
+        <!-- Left Navigation Bar -->
+        <div class="left-nav">
+            <div onclick="menu_click()" id="menu1" class="menu"><img src="/Photo/menu.png"></div>
+            <div onclick="menu_click()" class="menu" id="menu2"><img src="/Photo/arrow.png"></div>
+            <div class="logo">
+                <div class="f">Gamer</div>
+                <div class="s">Z</div>
+            </div>
+        </div>
+
+        <!-- Middle Navigation Bar -->
+        <div class="middle-nav">
+            <a href="/index.html">Home</a>
+            <a class="active" href="/pubg.html">Pubg</a>
+            <a href="/free_fire.html">Free Fire</a>
+            <a href="/game_app.html">Games </a>
+            <a href="/about_us.html">About us</a>
+        </div>
+
+        <!-- Right Navigation Bar -->
+        <div class="right-nav">
+
+            <!-- For Login Options -->
+            <div class="login">
+                <a href="login.html">Login</a>
+            </div>
+
+            <!-- For Account Options -->
+            <div class="account">
+                <a href="/add_wallet.html"><img src="/Photo/add.png"></a>
+                <p>Rs:10/-</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Responsive navigation for small width devices  -->
+    <div id="content" class="res-middle-nav">
+        <div class="links"> <!--This is used for align link in center-->
+            <div class="nav-l">
+                <li><a href="/index.html">Home</a></li> <!-- .active is used for active nav link-->
+                <li class="active"><a href="/pubg.html">Pubg</a></li>
+                <li><a href="/free_fire.html">Free Fire</a></li>
+                <li><a href="/game_app.html">Games</a></li>
+                <li><a href="/about_us.html">About Us</a></li>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div class="pubg-id-list">
+        <div class="top-up-pubg"><a href="#">Pubg Uc Top Up</a></div>
+        <div class="title">Pubg Id's</div>
+        <div class="pubg-list">
+            <div class="user-id-pubg">
+                <img src="/Photo/maxresdefault.jpg">
+                <div class="desc">
+                    <p>Level :90; 20k Likes, All Evo Guns, All elite passs</p>
+                </div>
+
+            </div>
+
+            <div class="user-id-pubg">
+                <img src="/Photo/maxresdefault.jpg">
+                <div class="desc">
+                    <p>Level :90; 20k Likes, All Evo Guns, All elite passs</p>
+                </div>
+
+            </div>
+
+            <div class="user-id-pubg">
+                <img src="/Photo/maxresdefault.jpg">
+                <div class="desc">
+                    <p>Level :90; 20k Likes, All Evo Guns, All elite passs</p>
+                </div>
+
+            </div>
+
+            <div class="user-id-pubg">
+                <img src="/Photo/maxresdefault.jpg">
+                <div class="desc">
+                    <p>Level :90; 20k Likes, All Evo Guns, All elite passs</p>
+                </div>
+
+            </div>
+
+            <div class="user-id-pubg">
+                <img src="/Photo/maxresdefault.jpg">
+                <div class="desc">
+                    <p>Level :90; 20k Likes, All Evo Guns, All elite passs</p>
+                </div>
+
+            </div>
+
+            <div class="user-id-pubg">
+                <img src="/Photo/maxresdefault.jpg">
+                <div class="desc">
+                    <p>Level :90; 20k Likes, All Evo Guns, All elite passs</p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <div class="footer-1">
+        <div class="footer">
+            <div class="f-1">
+                <div class="title-f">
+                    <div class="f">Gamer</div>
+                    <div class="s">Z</div>
+                </div>
+                <div class="desc-f">GamerZ is a online store where gamers can purchased
+                    Free Fire Diamond and Pubg Uc. Here you can purchase Mobile/Pc games.
+                    If you have any doubt you can send message to us.
+                </div>
+            </div>
+            <div class="f-2">
+                <div class="title-f">
+                    <div class="f">Quick</div>
+                    <div class="s">Links</div>
+                </div>
+                <div class="links-f">
+                    <li><a href="#">Free Fire Top Up</a></li>
+                    <li><a href="#">Pubg Top Up</a></li>
+                    <li><a href="#">Free Fire Id</a></li>
+                    <li><a href="#">Pubg Top Up</a></li>
+                    <li><a href="#">Game/App</a></li>
+                    <li><a href="#">About Us</a></li>
+                </div>
+            </div>
+            <div class="f-3">
+                <div class="title-n">NEWSLETTER</div>
+                <div class="desc-f">Subscribe our newsletter to get latest update.</div>
+                <div class="subscribe">
+                    <input type="text" placeholder="Your email address">
+                    <img src="/Photo/send.png">
+                </div>
+
+            </div>
+        </div>
+        <div class="copyright">Copyright © 2024 GamerZ LLC. All Rights Reserved.</div>
+    </div>
+
+    <!-- Help Desk -->
+    <style>
+        /* Chat Bot */
+        .help-desk {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            margin-right: 30px;
+            margin-bottom: 30px;
+            position: fixed;
+        }
+
+        .help-desk img {
+            border: 2px solid #fff;
+            background-color: #fff;
+            border-radius: 4px;
+            cursor: pointer;
+
+        }
+
+        .help-desk img:hover {
+            background-color: #00909D;
+            transition: 0.3s;
+        }
+
+        .start-chat {
+            position: fixed;
+            bottom: 0;
+            right: 0;
+            margin-right: 30px;
+            margin-bottom: 30px;
+        }
+
+        .lets-chat {
+
+            padding: 15px;
+            border-radius: 3px;
+            background-color: #110f29;
+        }
+
+        .lets-chat .hlp {
+            display: flex;
+            justify-content: center;
+        }
+
+        .lets-chat .hlp img {
+            width: 30px;
+            border-radius: 4px;
+            cursor: pointer;
+            border: 2px solid #00909D;
+            margin-bottom: 10px;
+            background-color: #048F9D;
+            padding: 5px;
+        }
+
+        .lets-chat .hlp img:hover {
+
+            transition: 0.1s;
+            background-color: transparent;
+        }
+
+        .lets-chat .admin p {
+            background-color: #36384a;
+            width: 150px;
+            color: white;
+            padding: 3px 5px;
+            border-radius: 3px;
+        }
+
+        .lets-chat .user {
+            float: right;
+        }
+
+        .lets-chat .user p {
+            background-color: #36384a;
+            width: auto;
+            color: white;
+            padding: 3px 5px;
+            border-radius: 3px;
+
+        }
+
+        .chats {
+
+            height: 150px;
+            border-radius: 3px;
+            background-color: white;
+            padding: 3px;
+        }
+
+        .send-chat {
+            display: flex;
+            align-items: center;
+        }
+
+        .send-chat input[type=text] {
+            width: 200px;
+            height: 25px;
+            border-radius: 3px;
+            outline: none;
+            border: 1px solid transparent;
+            padding: 10px;
+            color: white;
+            background-color: #0c0b21;
+
+        }
+
+        .send-chat img {
+            width: 35px;
+            margin: 5px;
+            cursor: pointer;
+            background-color: transparent;
+            padding: 5px;
+            border: 3px solid #00909D;
+        }
+
+        .send-chat img:hover {
+            background-color: #00909D;
+            transition: 0.2s;
+        }
+    </style>
+    <!-- Online customer support -->
+    <div id="help-option" class="help-desk">
+        <img onclick="opend()" src="/Photo/customer-service.png"> <!--To open chat -->
+    </div>
+    <!--Chat Service -->
+    <div id="help-desk" class="start-chat">
+        <div class="lets-chat">
+            <div class="hlp"><img onclick="closed()" src="/Photo/arrow.png"></div><!--Close Icon To close chat-->
+
+            <!-- Admin Chats -->
+            <div class="chats">
+                <div class="admin">
+                    <p>Hello. How can i help you?</p>
+                </div>
+
+                <!-- Users Chats -->
+                <div class="user">
+                    <p>Hi</p>
+                </div>
+            </div>
+
+            <!-- Typing chat and send button -->
+            <div class="send-chat">
+                <input type="text" placeholder="Let's Start chats."><!--Type Chat -->
+                <img src="/Photo/send.png"><!--Send Chat-->
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        var helpb = document.getElementById("help-option");
+        var helpd = document.getElementById("help-desk");
+        helpd.style.display = "none";
+        function opend() {
+            var helpd = document.getElementById("help-desk");
+            if (helpd.style.display = "none") {
+                helpd.style.display = "block";
+                helpb.style.display = "none";
+            }
+        }
+
+        function closed() {
+            helpd.style.display = "none";
+            helpb.style.display = "block";
+        }
+
+    </script>
+
+
+    <script>
+        let menu_content = document.getElementById("content");
+        menu_content.style.display = "none"
+        let menu1 = document.getElementById("menu1");
+        let menu2 = document.getElementById("menu2");
+        menu2.style.display = "none";
+
+
+        function menu_click() {
+
+            let menu_content = document.getElementById("content");
+
+
+
+            if (menu_content.style.display === "none") {
+                menu_content.style.display = "block"
+                menu1.style.display = "none";
+                menu2.style.display = "block";
+
+            }
+            else {
+                menu_content.style.display = "none"
+                menu1.style.display = "block";
+                menu2.style.display = "none";
+            }
+        }
+
+
+    </script>
+</body>
+
+</html>
